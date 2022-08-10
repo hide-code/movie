@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model
+class Comment extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'users';
+    protected $table = 'contents';
 
-    public function contents()
+    public function content()
     {
-        return $this->hasMany(Content::class);
+        return $this->belongsTo(User::class);
     }
 }

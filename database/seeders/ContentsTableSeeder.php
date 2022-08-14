@@ -31,6 +31,14 @@ class ContentsTableSeeder extends Seeder
                 'comment' => 'こんな家族になりたい!!心温まるファミリードラマ',
                 'created_at' => now(),
                 'updated_at' => now(),
+            ],
+            [
+                'user_id' => '1',
+                'title' => '',
+                'avatar' => '',
+                'comment' => 'こんな家族になりたい!!心温まるファミリードラマ',
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
     }

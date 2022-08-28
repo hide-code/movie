@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ContentsTableSeeder::class,
             CommentsTableSeeder::class,
             CategoriesTableSeeder::class,
+            CategoryContentTableSeeder::class,
         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

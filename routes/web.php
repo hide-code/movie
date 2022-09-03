@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Content\GetContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'content', 'as' =>'content.', 'namespace' => 'Content'], function () {
+    Route::get('/', [GetContentController::class, '__invoke'])->name('index');
 });

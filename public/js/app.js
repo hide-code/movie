@@ -1,8 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/alpinejs/dist/module.esm.js":
 /*!**************************************************!*\
   !*** ./node_modules/alpinejs/dist/module.esm.js ***!
@@ -2972,7 +2970,6 @@ var module_default = src_default;
 
 /***/ }),
 
->>>>>>> develop
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -5030,11 +5027,6 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-<<<<<<< HEAD
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-=======
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5046,7 +5038,6 @@ __webpack_require__.r(__webpack_exports__);
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
->>>>>>> develop
 
 /***/ }),
 
@@ -22297,18 +22288,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
   \*******************************/
-<<<<<<< HEAD
-/***/ (() => {
-
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nTypeError: Cannot read property 'config' of undefined\n    at getTailwindConfig (/Users/kitakata/Desktop/movie/laravel_app/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:87:63)\n    at /Users/kitakata/Desktop/movie/laravel_app/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:129:92\n    at /Users/kitakata/Desktop/movie/laravel_app/node_modules/tailwindcss/lib/processTailwindFeatures.js:46:11\n    at plugins (/Users/kitakata/Desktop/movie/laravel_app/node_modules/tailwindcss/lib/index.js:33:63)\n    at LazyResult.runOnRoot (/Users/kitakata/Desktop/movie/laravel_app/node_modules/postcss/lib/lazy-result.js:339:16)\n    at LazyResult.runAsync (/Users/kitakata/Desktop/movie/laravel_app/node_modules/postcss/lib/lazy-result.js:393:26)\n    at LazyResult.async (/Users/kitakata/Desktop/movie/laravel_app/node_modules/postcss/lib/lazy-result.js:221:30)\n    at LazyResult.then (/Users/kitakata/Desktop/movie/laravel_app/node_modules/postcss/lib/lazy-result.js:206:17)\n    at processResult (/Users/kitakata/Desktop/movie/laravel_app/node_modules/webpack/lib/NormalModule.js:758:19)\n    at /Users/kitakata/Desktop/movie/laravel_app/node_modules/webpack/lib/NormalModule.js:860:5\n    at /Users/kitakata/Desktop/movie/laravel_app/node_modules/loader-runner/lib/LoaderRunner.js:400:11\n    at /Users/kitakata/Desktop/movie/laravel_app/node_modules/loader-runner/lib/LoaderRunner.js:252:18\n    at context.callback (/Users/kitakata/Desktop/movie/laravel_app/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at Object.loader (/Users/kitakata/Desktop/movie/laravel_app/node_modules/postcss-loader/dist/index.js:142:7)");
-=======
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
->>>>>>> develop
 
 /***/ }),
 
@@ -22546,9 +22531,6 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-<<<<<<< HEAD
-/************************************************************************/
-=======
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
@@ -22609,7 +22591,6 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		};
 /******/ 	})();
 /******/ 	
->>>>>>> develop
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -22622,8 +22603,6 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		})();
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -22640,7 +22619,6 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		};
 /******/ 	})();
 /******/ 	
->>>>>>> develop
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -22650,8 +22628,6 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		};
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -22706,21 +22682,14 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
 /******/ 	
->>>>>>> develop
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	__webpack_require__("./resources/js/app.js");
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
-=======
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
->>>>>>> develop
 /******/ 	
 /******/ })()
 ;

@@ -3,21 +3,24 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Content;
 
-use Domain\Service\UseCase\Content\GetCategoryList;
-use Domain\Service\UseCase\Content\GetContentList;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Domain\Service\UseCase\Content\GetCategoryList;
 use Illuminate\View\View;
 
 class GetCreateContentController extends Controller
 {
     /**
-     * コンテンツ一覧画面に表示する情報を取得する
+     * コンテンツ作成ページに遷移する
      *
-     * @param GetContentList $getContentList
+     * @return View
      */
-    public function __invoke(): View
+    public function __invoke(
+        GetCategoryList $getCategoryList
+    ): View
     {
-        return view('content.create');
+        return view(
+            'content.create',
+            ['category_list' => $getCategoryList()]
+        );
     }
 }

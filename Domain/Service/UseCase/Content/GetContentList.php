@@ -16,7 +16,7 @@ class GetContentList
 
     /**
      * 検索ワードとタグが指定されたらそのページを返却する
-     * 
+     *
      * @param ?int $categoryId
      * @param ?string $searchWord
      */

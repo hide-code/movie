@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace app\Domain\Service\UseCase\Content;
+namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
 
@@ -16,7 +16,7 @@ class GetContentList
 
     /**
      * 検索ワードとタグが指定されたらそのページを返却する
-     * 
+     *
      * @param ?int $categoryId
      * @param ?string $searchWord
      */

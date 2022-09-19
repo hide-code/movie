@@ -23,8 +23,7 @@ class GetContentController extends Controller
         GetContentList $getContentList,
         GetCategoryList $getCategoryList,
         Request $request
-    ): View
-    {
+    ): View {
         return view('content.index',
             [
                 'content_list' => $getContentList(

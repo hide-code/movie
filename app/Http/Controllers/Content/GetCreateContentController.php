@@ -16,8 +16,7 @@ class GetCreateContentController extends Controller
      */
     public function __invoke(
         GetCategoryList $getCategoryList
-    ): View
-    {
+    ): View {
         return view(
             'content.create',
             ['category_list' => $getCategoryList()]

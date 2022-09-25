@@ -20,7 +20,7 @@ class StoreContentController extends Controller
     public function __invoke(
         StoreContent $storeContent,
         ContentRequest $contentRequest
-    ) {
+    ): RedirectResponse {
         $storeContent(
             $contentRequest->title,
             $contentRequest->comment,

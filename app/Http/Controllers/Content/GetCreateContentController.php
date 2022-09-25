@@ -12,6 +12,7 @@ class GetCreateContentController extends Controller
     /**
      * コンテンツ作成ページに遷移する
      *
+     * @param GetCategoryList $getCategoryList
      * @return View
      */
     public function __invoke(

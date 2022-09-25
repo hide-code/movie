@@ -19,7 +19,7 @@ class GetCreateContentController extends Controller
     ): View {
         return view(
             'content.create',
-            ['category_list' => $getCategoryList()]
+            ['categories' => $getCategoryList()]
         );
     }
 }

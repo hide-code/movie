@@ -46,7 +46,7 @@
                         <span class="ml-3">All</span>
                     </a>
                   </li>
-                    @foreach ($category_list as $category)
+                    @foreach ($categories as $category)
                       <li>
                         <a href="{{ route('content.index', ['category_id' => $category->id]) }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
@@ -61,7 +61,7 @@
         <section class="text-gray-600 w-full body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
-              @foreach ($content_list as $content)
+              @foreach ($contents as $content)
               <div class="p-4 md:w-1/3">
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset($content->avatar) }}" alt="blog">
@@ -92,7 +92,7 @@
                 </div>
               </div>
               @endforeach
-              {{ $content_list->links() }}
+              {{ $contents->links() }}
             </div>
           </div>
         </section>

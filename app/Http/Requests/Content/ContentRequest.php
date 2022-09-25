@@ -39,7 +39,7 @@ class ContentRequest extends FormRequest
             'avatar' => [
                 'required',
                 'image',
-                // 'mimes:jpeg, png, jpg',
+                'mimes:jpeg, png, jpg',
             ],
         ];
     }
@@ -53,13 +53,9 @@ class ContentRequest extends FormRequest
     {
         return [
             'exists' => 'カテゴリが存在しません。',
-            'title.required' => 'タイトルは必須です',
-            'content.required' => 'コンテントは必須です',
-            'avatar.required' => 'アバターは必須です',
-            'category_ids.required' => 'カテゴリーは必須です',
+            'required' => '必須項目です。',
             'max' => ':max 文字以内で入力してください。',
             'image' => '画像ファイルを選択してください。',
-            'avatar.max' => 'ファイル容量が:max KBを超えています。',
             'mimes' => "指定された拡張子（PNG/JPG）ではありません。",
         ];
     }

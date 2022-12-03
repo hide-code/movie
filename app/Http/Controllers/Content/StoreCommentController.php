@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Content;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Content\CommentRequest;
 use Domain\Service\UseCase\Content\StoreComment;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 
 class StoreCommentController extends Controller
@@ -20,14 +21,14 @@ class StoreCommentController extends Controller
     public function __invoke(
         StoreComment $storeComment,
         CommentRequest $commentRequest
-    ): RedirectResponse {
-      $contentId = (int)$commentRequest->content_id;
-        $storeComment(
+    ): JsonResponse {
+        $contentId = (int)$commentRequest->content_id;
+        $comment = $storeComment(
             $contentId,
             $commentRequest->title,
             $commentRequest->content
         );
 
-        return redirect()->route('content.show', $contentId);
+        return response()->json(compact('comment'), 200);
     }
 }

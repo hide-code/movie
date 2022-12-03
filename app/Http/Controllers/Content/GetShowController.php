@@ -22,7 +22,7 @@ class GetShowController extends Controller
     ): View {
         return view('content.show',
             [
-                'content' => $getShowContent($contentId),
+                'content' => $getShowContent($contentId)
             ]
         );
     }

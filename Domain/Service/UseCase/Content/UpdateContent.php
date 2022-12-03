@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as ImageFacade;
 use Intervention\Image\Image;
 
-class StoreContent
+class UpdateContent
 {
     private $content;
 
@@ -21,6 +21,7 @@ class StoreContent
     }
 
     public function __invoke(
+        int $contentId,
         string $title,
         string $comment,
         UploadedFile $avatar,
@@ -37,18 +38,16 @@ class StoreContent
         }
 
         $random = Str::random(40);
-
         $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
 
-        $this->content->user_id = Auth::id();
-        $this->content->title = $title;
-        $this->content->comment = $comment;
-        $this->content->avatar = 'storage/movie/' . $random . '.jpg';
-        $this->content->save();
+        $content = $this->content->find($contentId);
 
-        $this->content
-            ->categories()
-            ->sync($selectedCategoryIds);
+        $content->title = $title;
+        $content->comment = $comment;
+        $content->avatar = 'storage/movie/' . $random . '.jpg';
+        $content->save();
+
+        $content->categories()->sync($selectedCategoryIds);
     }
 
     /**

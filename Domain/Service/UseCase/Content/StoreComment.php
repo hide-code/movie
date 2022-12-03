@@ -18,10 +18,12 @@ class StoreComment
         int $contentId,
         string $title,
         string $content
-    ): void {
+    ): Comment {
         $this->comment->content_id = $contentId;
         $this->comment->title = $title;
         $this->comment->content = $content;
         $this->comment->save();
+
+        return $this->comment;
     }
 }

@@ -39,7 +39,7 @@ Route::group(['prefix' => 'content', 'as' =>'content.', 'namespace' => 'Content'
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', [GetCreateContentController::class, '__invoke'])->name('create.index');
         Route::post('/', [StoreContentController::class, '__invoke'])->name('store');
-        Route::get('/{id}/edit', [GetEditContentController::class, '__invoke'])->where(['id'=>'[0-9]+'])->name('edit');
-        Route::put('/', [UpdateContentController::class, '__invoke'])->name('update');
+        Route::get('/{content}/edit', [GetEditContentController::class, '__invoke'])->can('update-content', 'content')->where(['id'=>'[0-9]+'])->name('edit');
+        Route::put('/{content}/update', [UpdateContentController::class, '__invoke'])->can('update-content', 'content')->name('update');
     });
 });

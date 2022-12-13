@@ -21,11 +21,14 @@
 
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
         @auth
-          <a class="mr-5 hover:text-gray-900">ログアウト</a>
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="mr-5 hover:text-gray-900">ログアウト</button>
+          </form>
         @endauth
         @guest
-          <a class="mr-5 hover:text-gray-900">ログイン</a>
-          <a class="mr-5 hover:text-gray-900">アカウント登録</a>
+          <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">ログイン</a>
+          <a href="{{ route('register') }}" class="mr-5 hover:text-gray-900">アカウント登録</a>
         @endguest
       </nav>
       <a href="{{ route('content.create.index') }}" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">作品を投稿する

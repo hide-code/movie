@@ -1,4 +1,4 @@
-@extends('layouts.test')
+@extends('layouts.header')
 
 @section('title')
   ブログ記事一覧のページ

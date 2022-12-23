@@ -5,7 +5,6 @@ namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as ImageFacade;
@@ -24,27 +23,31 @@ class UpdateContent
         int $contentId,
         string $title,
         string $comment,
-        UploadedFile $avatar,
+        ?UploadedFile $avatar,
         array $selectedCategoryIds
     ): void {
-        $resizedAvatar = $this->resizeImage(
-            $avatar,
-            512,
-            512
-        );
-
-        if (!in_array("public/movie", Storage::directories('public'))) {
-            Storage::makeDirectory("public/movie");
-        }
-
-        $random = Str::random(40);
-        $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
 
         $content = $this->content->find($contentId);
 
+        if (isset($avatar)) {
+            $resizedAvatar = $this->resizeImage(
+                $avatar,
+                512,
+                512
+            );
+
+            if (!in_array("public/movie", Storage::directories('public'))) {
+                Storage::makeDirectory("public/movie");
+            }
+
+            $random = Str::random(40);
+            $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
+            $content->avatar = 'storage/movie/' . $random . '.jpg';
+        }
+
         $content->title = $title;
         $content->comment = $comment;
-        $content->avatar = 'storage/movie/' . $random . '.jpg';
+
         $content->save();
 
         $content->categories()->sync($selectedCategoryIds);

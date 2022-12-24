@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Content;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,6 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('update-content', function (User $user, Content $content) {
+            return $user->id === $content->user_id;
+        });
     }
 }

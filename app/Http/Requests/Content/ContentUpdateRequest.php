@@ -4,7 +4,7 @@ namespace App\Http\Requests\Content;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContentRequest extends FormRequest
+class ContentUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -37,7 +37,6 @@ class ContentRequest extends FormRequest
                 'exists:categories,id',
             ],
             'avatar' => [
-                'required',
                 'image',
                 'mimes:jpeg, png, jpg',
             ],
@@ -59,4 +58,6 @@ class ContentRequest extends FormRequest
             'mimes' => "指定された拡張子（PNG/JPG）ではありません。",
         ];
     }
+
+
 }

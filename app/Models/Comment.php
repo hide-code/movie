@@ -9,7 +9,7 @@ class Comment extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'contents';
+    protected $table = 'comments';
 
     public function content()
     {

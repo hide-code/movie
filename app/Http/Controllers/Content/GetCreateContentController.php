@@ -12,6 +12,7 @@ class GetCreateContentController extends Controller
     /**
      * コンテンツ作成ページに遷移する
      *
+     * @param GetCategoryList $getCategoryList
      * @return View
      */
     public function __invoke(
@@ -19,7 +20,7 @@ class GetCreateContentController extends Controller
     ): View {
         return view(
             'content.create',
-            ['category_list' => $getCategoryList()]
+            ['categories' => $getCategoryList()]
         );
     }
 }

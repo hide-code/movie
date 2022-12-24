@@ -5,13 +5,12 @@ namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as ImageFacade;
 use Intervention\Image\Image;
 
-class StoreContent
+class UpdateContent
 {
     private $content;
 
@@ -21,34 +20,37 @@ class StoreContent
     }
 
     public function __invoke(
+        int $contentId,
         string $title,
         string $comment,
-        UploadedFile $avatar,
+        ?UploadedFile $avatar,
         array $selectedCategoryIds
     ): void {
-        $resizedAvatar = $this->resizeImage(
-            $avatar,
-            512,
-            512
-        );
 
-        if (!in_array("public/movie", Storage::directories('public'))) {
-            Storage::makeDirectory("public/movie");
+        $content = $this->content->find($contentId);
+
+        if (isset($avatar)) {
+            $resizedAvatar = $this->resizeImage(
+                $avatar,
+                512,
+                512
+            );
+
+            if (!in_array("public/movie", Storage::directories('public'))) {
+                Storage::makeDirectory("public/movie");
+            }
+
+            $random = Str::random(40);
+            $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
+            $content->avatar = 'storage/movie/' . $random . '.jpg';
         }
 
-        $random = Str::random(40);
+        $content->title = $title;
+        $content->comment = $comment;
 
-        $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
+        $content->save();
 
-        $this->content->user_id = Auth::id();
-        $this->content->title = $title;
-        $this->content->comment = $comment;
-        $this->content->avatar = 'storage/movie/' . $random . '.jpg';
-        $this->content->save();
-
-        $this->content
-            ->categories()
-            ->sync($selectedCategoryIds);
+        $content->categories()->sync($selectedCategoryIds);
     }
 
     /**

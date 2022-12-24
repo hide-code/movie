@@ -26,11 +26,11 @@ class GetContentController extends Controller
     ): View {
         return view('content.index',
             [
-                'content_list' => $getContentList(
+                'contents' => $getContentList(
                     (int)$request->category_id,
                     $request->search_word
                 ),
-                'category_list' => $getCategoryList()
+                'categories' => $getCategoryList()
             ]
         );
     }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class GetContentList
 {
@@ -23,8 +24,7 @@ class GetContentList
     public function __invoke(
         ?int $categoryId,
         ?string $searchWord
-    )
-    {
+    ): LengthAwarePaginator {
         $query = Content::query();
 
         if (!empty($categoryId)) {
@@ -39,7 +39,7 @@ class GetContentList
                });
         }
 
-        return $query->orderBy('created_at', 'desc')->paginate(6);
+        return $query->orderBy('created_at', 'desc')->withCount('comments')->paginate(10);
     }
 
 }

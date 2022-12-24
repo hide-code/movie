@@ -4,7 +4,7 @@ namespace App\Http\Requests\Content;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContentRequest extends FormRequest
+class CommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,20 +26,13 @@ class ContentRequest extends FormRequest
         return [
             'title' => [
                 'required',
+                // 'min:30',
                 'max:50',
             ],
-            'comment' => [
+            'content' => [
                 'required',
+                // 'min:50',
                 'max:1000',
-            ],
-            'category_ids' =>[
-                'required',
-                'exists:categories,id',
-            ],
-            'avatar' => [
-                'required',
-                'image',
-                'mimes:jpeg, png, jpg',
             ],
         ];
     }
@@ -52,11 +45,9 @@ class ContentRequest extends FormRequest
     public function messages()
     {
         return [
-            'exists' => 'カテゴリが存在しません。',
             'required' => '必須項目です。',
             'max' => ':max 文字以内で入力してください。',
-            'image' => '画像ファイルを選択してください。',
-            'mimes' => "指定された拡張子（PNG/JPG）ではありません。",
+            'min' => ':min 文字以上で入力してください。',
         ];
     }
 }

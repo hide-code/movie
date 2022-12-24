@@ -28,8 +28,8 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Domain\\": "domain/",
-            "Infla\\": "infla/"
+            "Domain\\": "Domain/",
+            "Infla\\": "Infla/"
         }
     },
     "autoload-dev": {

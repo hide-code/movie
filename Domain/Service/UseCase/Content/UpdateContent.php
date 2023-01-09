@@ -4,14 +4,14 @@ declare(strict_types=1);
 namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
+use Domain\Service\Traits\ResizeImage;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image as ImageFacade;
-use Intervention\Image\Image;
-
 class UpdateContent
 {
+    use ResizeImage;
+
     private $content;
 
     public function __construct(Content $content)
@@ -51,26 +51,5 @@ class UpdateContent
         $content->save();
 
         $content->categories()->sync($selectedCategoryIds);
-    }
-
-    /**
-     * 画像をリサイズする
-     *
-     * @param UploadedFile $file
-     * @param integer $height
-     * @param integer $width
-     * @return Image
-     */
-    private function resizeImage(
-      UploadedFile $file,
-      int $height,
-      int $width
-    ): Image {
-        return ImageFacade::make($file)
-            ->orientate()
-            ->resize(
-                $height,
-                $width
-            );
     }
 }

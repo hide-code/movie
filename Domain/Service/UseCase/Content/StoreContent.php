@@ -4,15 +4,18 @@ declare(strict_types=1);
 namespace Domain\Service\UseCase\Content;
 
 use App\Models\Content;
+use Domain\Service\Traits\ResizeImage;
+use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image as ImageFacade;
-use Intervention\Image\Image;
+
 
 class StoreContent
 {
+    use ResizeImage;
+
     private $content;
 
     public function __construct(Content $content)
@@ -40,35 +43,17 @@ class StoreContent
 
         $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
 
+        $tmpPath = storage_path('app/public/movie/' . $random . '.jpg');
+        $url = Storage::disk('s3')->putFile('test', new File($tmpPath), 'public');
+
         $this->content->user_id = Auth::id();
         $this->content->title = $title;
         $this->content->comment = $comment;
-        $this->content->avatar = 'storage/movie/' . $random . '.jpg';
+        $this->content->avatar = $url;
         $this->content->save();
 
         $this->content
             ->categories()
             ->sync($selectedCategoryIds);
-    }
-
-    /**
-     * 画像をリサイズする
-     *
-     * @param UploadedFile $file
-     * @param integer $height
-     * @param integer $width
-     * @return Image
-     */
-    private function resizeImage(
-      UploadedFile $file,
-      int $height,
-      int $width
-    ): Image {
-        return ImageFacade::make($file)
-            ->orientate()
-            ->resize(
-                $height,
-                $width
-            );
     }
 }

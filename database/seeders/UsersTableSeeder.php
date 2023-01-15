@@ -17,8 +17,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
         DB::table('users')->insert([
             [
-                'name' => '',
-                'email' => 'hoge@gmail.com',
+                'name' => 'ゲストログイン',
+                'email' => 'guest@example.com',
                 'password' => 'hogehoge',
                 'created_at' => now(),
                 'updated_at' => now(),

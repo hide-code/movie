@@ -23,10 +23,14 @@
         @auth
           <form method="POST" action="{{ route('logout') }}">
             @csrf
+            <span class="text-gray-900">ようこそ</span>
+            <span class="text-gray-900 text-lime-500">{{ Auth::User()->name }}</span>
+            <span class="mr-10 text-gray-900">さん</span>
             <button class="mr-5 hover:text-gray-900">ログアウト</button>
           </form>
         @endauth
         @guest
+          <a href="{{ route('guest') }}" class="mr-5 hover:text-gray-900 text-lime-500">ゲストログイン</a>
           <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">ログイン</a>
           <a href="{{ route('register') }}" class="mr-5 hover:text-gray-900">アカウント登録</a>
         @endguest

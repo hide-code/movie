@@ -37,7 +37,6 @@ class ContentRequest extends FormRequest
                 'exists:categories,id',
             ],
             'avatar' => [
-                'required',
                 'image',
                 'mimes:jpeg, png, jpg',
             ],

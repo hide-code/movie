@@ -32,8 +32,8 @@ class UpdateContent
         if (isset($avatar)) {
             $resizedAvatar = $this->resizeImage(
                 $avatar,
-                512,
-                512
+                800,
+                1200
             );
 
             if (!in_array("public/movie", Storage::directories('public'))) {

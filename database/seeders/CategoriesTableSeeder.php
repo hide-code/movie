@@ -38,10 +38,7 @@ class CategoriesTableSeeder extends Seeder
                 'name' => 'SF',
             ],
             [
-                'name' => 'サスペンス',
-            ],
-            [
-                'name' => 'ミステリー',
+                'name' => 'ラブロマンス',
             ],
             [
                 'name' => 'その他',

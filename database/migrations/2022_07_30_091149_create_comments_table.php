@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('content_id')->unsigned();
             $table->string('title')->nullable();
-            $table->string('content')->nullable();
+            $table->text('content')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign("content_id")->references("id")->on("contents");

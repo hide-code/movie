@@ -16,9 +16,9 @@
       <div class="flex flex-col flex-wrap lg:py-6 -mb-10 w-1/2 lg:pl-12 lg:text-left text-center">
         <div class="flex flex-col mb-10 lg:items-start items-center">
           <div class="flex-grow mb-20 border-sky-500">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-5">{{ $content->title }}</h2>
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-3">@foreach ($content->categories as $category) {{ $category->name }} @endforeach</h2>
-            <h2 class="leading-relaxed text-base">{{ $content->user->name }}からのコメント</h2>
+            <h2 class="text-gray-900 text-2xl title-font font-medium mb-5">{{ $content->title }}</h2>
+            <h2 class="tracking-widest text-base title-font font-medium text-gray-400 mb-3">@foreach ($content->categories as $category) {{ $category->name }} @endforeach</h2>
+            <h2 class="leading-relaxed mb-5 text-lg">{{ $content->user->name }} さんからのコメント</h2>
             <p>{{ $content->comment }}</p>
           </div>
           <div>

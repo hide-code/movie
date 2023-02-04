@@ -31,8 +31,8 @@ class StoreContent
     ): void {
         $resizedAvatar = $this->resizeImage(
             $avatar,
-            512,
-            512
+            800,
+            1200
         );
 
         if (!in_array("public/movie", Storage::directories('public'))) {
@@ -44,7 +44,7 @@ class StoreContent
         $avatar = $resizedAvatar->save(storage_path('app/public/movie/' . $random . '.jpg'));
 
         $tmpPath = storage_path('app/public/movie/' . $random . '.jpg');
-        $url = Storage::disk('s3')->putFile('test', new File($tmpPath), 'public');
+        $url = Storage::disk('s3')->putFile('contents-avatar', new File($tmpPath), 'public');
 
         $this->content->user_id = Auth::id();
         $this->content->title = $title;

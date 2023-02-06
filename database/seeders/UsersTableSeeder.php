@@ -23,6 +23,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => '一般ユーザー',
+                'email' => 'hoge@example.com',
+                'password' => 'hogehoge',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

@@ -11,7 +11,7 @@
   <section class="text-gray-600 body-font">
     <div class="w-4/5 px-5 py-12 mx-auto flex">
       <div class="lg:w-1/4 w-1/4 mb-10 lg:mb-0 rounded-lg overflow-hidden">
-        <img alt="feature" class="object-cover object-center h-harf w-harf" src="{{ config('filesystems.disks.s3.url') . $content->avatar }}]">
+        <img alt="feature" class="object-cover object-center h-harf w-harf" src="{{ config('filesystems.disks.s3.url') . $content->avatar }}">
       </div>
       <div class="flex flex-col flex-wrap lg:py-6 -mb-10 w-1/2 lg:pl-12 lg:text-left text-center">
         <div class="flex flex-col mb-10 lg:items-start items-center">

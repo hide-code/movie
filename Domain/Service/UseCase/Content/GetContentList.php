@@ -39,7 +39,7 @@ class GetContentList
                });
         }
 
-        return $query->orderBy('id', 'desc')->withCount('comments')->paginate(10);
+        return $query->orderBy('created_at', 'desc')->withCount('comments')->paginate(10);
     }
 
 }

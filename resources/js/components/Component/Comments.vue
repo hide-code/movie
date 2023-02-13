@@ -4,7 +4,7 @@
       <h2 class="border-b-2 mb-5">コメント投稿</h2>
       <div>
         <div class="mb-6">
-          <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">コメントタイトル</label>
+          <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">コメントタイトル</label>
           <input v-model="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           <p v-if="valid.title" class="mt-2 text-sm text-red-600 dark:text-red-500">50文字以内で入力してください。</p>
         </div>
@@ -65,6 +65,8 @@
           })
           .then((res) => {
             this.viewComments.unshift(res.data.comment)
+            this.title = "";
+            this.content = "";
           })
           .catch((err) => {
           });

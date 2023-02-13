@@ -46,7 +46,7 @@
             @foreach ($contents as $content)
             <div class="p-4 md:w-1/3">
               <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <a href="{{ route('content.show', ['id' => $content->id]) }}"><img class="lg:h-64 md:h-42 w-full object-cover object-center" src="{{ config('filesystems.disks.s3.url') . $content->avatar }}" alt="blog"></a>
+                <a href="{{ route('content.show', ['id' => $content->id]) }}"><img class="lg:h-84 md:h-42 w-full object-cover object-center" src="{{ config('filesystems.disks.s3.url') . $content->avatar }}" alt="blog"></a>
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">@foreach ($content->categories as $category) {{ $category->name }} @endforeach</h2>
                   <a href="{{ route('content.show', ['id' => $content->id]) }}"><h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $content->title }}</h1></a>

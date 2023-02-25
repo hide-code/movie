@@ -18,7 +18,7 @@
           <div class="flex-grow mb-20 border-sky-500">
             <h2 class="text-gray-900 text-2xl title-font font-medium mb-5">{{ $content->title }}</h2>
             <h2 class="tracking-widest text-base title-font font-medium text-gray-400 mb-3">@foreach ($content->categories as $category) {{ $category->name }} @endforeach</h2>
-            <h2 class="leading-relaxed mb-5 text-lg">{{ $content->user->name }} さんからのコメント</h2>
+            <h2 class="leading-relaxed mb-5 text-lg"><span class="text-lime-500">{{ $content->user->name }}</span> さんからのコメント</h2>
             <p>{{ $content->comment }}</p>
           </div>
           <div>

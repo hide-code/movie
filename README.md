@@ -7,11 +7,12 @@
 ※画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 
 # 使用技術
-- PHP7.3
-- Laravel8.1
-- MySQL 8.0
+- PHP
+- Laravel
+- MySQL 
 - Apach
-- Vue
+- Javascript
+- Vue.Js
 - AWS
   - IAM
   - EC2
